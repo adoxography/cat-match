@@ -1,10 +1,10 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { AudioProvider } from "./contexts/AudioContext";
 import { PreloadProvider } from "./contexts/PreloadContext";
 import Game from "./components/Game";
 import Menu from "./components/Menu";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <Menu />,
