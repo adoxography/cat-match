@@ -1,0 +1,82 @@
+.Card {
+  --shadow-clr: 0deg 0% 0%;
+
+  position: relative;
+  display: grid;
+  width: min(100cqw, 100cqh);
+  height: min(100cqw, 100cqh);
+  border-radius: 100% 100% calc(15% + 0.5rem) 100%;
+  background-image: linear-gradient(-45deg, var(--primary-900), var(--primary-950));
+  box-shadow:
+    0 0 1.5rem 0.5rem hsla(var(--shadow-clr) / 10%),
+    0 0 0.5rem 0.25rem hsla(var(--shadow-clr) / 20%),
+    inset 1px 1px 5px 1px rgba(255 255 255 / 50%)
+  ;
+  container-type: size;
+  place-items: center;
+  transition: filter 250ms ease-in-out;
+}
+
+.Card--top {
+  rotate: 180deg;
+}
+
+.Card--win {
+  filter: brightness(1.1);
+  outline: 0.25rem solid var(--primary-500);
+}
+
+.Card__score {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  width: 15%;
+  padding: 0.5rem;
+  border-radius: 100%;
+  margin: 0.5rem;
+  aspect-ratio: 1 / 1;
+  background-image: radial-gradient(var(--primary-400) 50%, var(--primary-500));
+  box-shadow: 0 0 1rem 0.5rem rgba(255 255 255 / 10%);
+  color: var(--primary-950);
+  font-family: var(--ff-display);
+  font-size: 1.5rem;
+  place-items: center;
+  rotate: -45deg;
+  text-decoration: underline;
+}
+
+.Card__item {
+  --theta: calc((var(--pi) * 2rad) / var(--n, 1));
+  --r: min(50cqw, 50cqh);
+  --tmp: calc(var(--r) / (tan(var(--theta) / 2) + 1));
+  --b: min(var(--r) - var(--tmp), min(16cqw, 16cqh));
+  --a: calc(var(--r) - var(--b));
+
+  position: absolute;
+  width: calc(var(--b));
+  aspect-ratio: 1 / 1;
+  transform:
+    rotate(calc(var(--theta) * var(--i)))
+    translate(calc(var(--a) * min(1, max(0, (var(--n) - var(--i))))))
+    rotate(var(--rotation))
+    scale(calc(1 + var(--scale, 0)))
+  ;
+}
+
+.Card__winner {
+  color: var(--primary-500);
+  font-family: var(--ff-display);
+  font-size: 5rem;
+  user-select: none;
+}
+
+@media (width >= 768px) {
+  .Card--bottom .Card__winner {
+    rotate: 0deg;
+  }
+
+  .Card--top .Card__winner {
+    rotate: 180deg;
+  }
+}

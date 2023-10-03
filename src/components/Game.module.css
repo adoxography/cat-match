@@ -1,0 +1,20 @@
+.Game {
+  display: grid;
+  height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.Game__card-wrapper {
+  display: grid;
+  container-type: size;
+  place-items: center;
+}
+
+@media (width >= 768px) {
+  .Game {
+    grid-auto-flow: column;
+  }
+}

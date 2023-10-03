@@ -1,0 +1,40 @@
+.Help {
+  max-width: 50ch;
+  padding: 2rem;
+  background-color: var(--gray-100);
+  opacity: 0;
+  scale: 0.75;
+  transition:
+    opacity 250ms ease-in-out,
+    scale 250ms ease-in-out;
+}
+
+.Help--open {
+  opacity: 1;
+  scale: 1;
+}
+
+.Help__close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+  border: none;
+  margin: 1rem;
+  background: none;
+}
+
+.Help__title {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.Help__subtitle {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.Help__paragraph {
+  margin-top: 0.75rem;
+  line-height: 1.6;
+}

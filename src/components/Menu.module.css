@@ -1,0 +1,83 @@
+.Menu {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100dvh;
+  place-items: center;
+}
+
+.Menu__image {
+  position: absolute;
+  translate: 0 -55%;
+}
+
+.Menu__content {
+  position: relative;
+  display: grid;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  background-color: var(--primary-100);
+  box-shadow:
+    0 0 1.5rem 0.5rem hsla(0deg 0% 0% / 10%),
+    0 0 0.5rem 0.25rem hsla(0deg 0% 0% / 20%);
+}
+
+.Menu__title {
+  margin-bottom: 2rem;
+  color: var(--primary-950);
+  font-family: var(--ff-display);
+  font-size: clamp(2rem, 9vw, 4rem);
+}
+
+.Menu__difficulty {
+  display: grid;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  color: var(--primary-900);
+  column-gap: 0.5rem;
+  font-family: var(--ff-display);
+  grid-template-areas:
+    'label input'
+    '_ description'
+  ;
+}
+
+.Menu__difficulty-description {
+  font-size: 0.875rem;
+  font-style: italic;
+  grid-area: description;
+  justify-self: flex-end;
+}
+
+.Menu__start-button {
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  background-color: var(--primary-500);
+  color: var(--primary-950);
+  font-family: var(--ff-display);
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 150ms ease-in-out;
+}
+
+.Menu__start-button:hover {
+  background-color: var(--primary-400);
+}
+
+.Menu__help-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+  border: none;
+  margin: 1rem;
+  background: none;
+  color: var(--primary-400);
+  cursor: pointer;
+  font-size: 1.5rem !important;
+  transition: background-color 150ms ease-in-out;
+}
+
+.Menu__help-button:hover {
+  color: var(--primary-300);
+}
