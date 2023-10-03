@@ -37,7 +37,8 @@ const initialGameState: GameState = {
   player2: { ...initialPlayerState },
 };
 
-const playerReducer = (state: PlayerState, action): PlayerState => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const playerReducer = (state: PlayerState, action: any): PlayerState => {
   switch (action.type) {
     case 'initialize':
       return {
@@ -61,7 +62,8 @@ const playerReducer = (state: PlayerState, action): PlayerState => {
   }
 };
 
-const reducer = (state: GameState, action): GameState => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const reducer = (state: GameState, action: any): GameState => {
   switch (action.type) {
     case 'new-round':
       // eslint-disable-next-line no-case-declarations
